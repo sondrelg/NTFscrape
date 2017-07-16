@@ -91,7 +91,6 @@ def mcap(tickers, exchange = 0):
         i+=1
     return(mcaps_revised)
 
-#-------------------------------------------------------------------------------------------------------------------------------
 
 def get_tickers(exchange=0):
     """Please specify 'exchange = 1' to receive Axess-tickers. Function returns OSE tickers by default."""
@@ -113,8 +112,7 @@ def get_tickers(exchange=0):
                 tickers.remove(ticker)
     return (tickers)
 
-# -------------------------------------------------------------------------------------------------------------------------------------
-
+    
 def get_company_names(exchange = 0):
     """Please specify 'exchange = 1' to receive Axess-tickers. Function returns OSE names by default."""
     if exchange == 0:
@@ -135,8 +133,8 @@ def get_company_names(exchange = 0):
         i += 1
     return (names)
 
-#SCRAPE FUNCTIONS ------------------------------------------------------------------------------------------------------------
-
+    
+#SCRAPE FUNCTIONS 
 #   :1 1
 def _scrapec1_1(url, table_class, row = 0, column = 0):    
     var = []
@@ -228,8 +226,7 @@ def _scrape1_1c(url, table_class, row = 0, column = 0):
         var.append(result)
     return(var)           
       
-#Main Scrape Function     ----------------------------------------------------------------------------------------------------------------------
-
+#Main Scrape Function
 def scrape(url, table_class, row = 0, column = 0, prespec_row = 0, prespec_column = 0, postspec_row = 0, postspec_column = 0):
     """Scrape function requires several inputs to work.
         First input is the relevant URL from which to scrape data.
@@ -271,7 +268,6 @@ def scrape(url, table_class, row = 0, column = 0, prespec_row = 0, prespec_colum
         else:
             return _scrape1_1(url, table_class, row, column)
     
-# ------------------------------------------------------------------------------------------------------------
 
 def _price_sup(url, entry):
         resp = requests.get(url)
@@ -305,7 +301,6 @@ def price(tickers, exchange = 0):
                 i+=1
     return(prices)
 
-# ----------------------------------------------------------------------------------------------------------
 
 def daily_returns(tickers, exchange = 0):
     """The function requires one or several tickers in list format. Please specify 'exchange = 1' to receive Axess-tickers. Function returns OSE tickers by default."""
@@ -332,7 +327,6 @@ def daily_returns(tickers, exchange = 0):
                 i+=1
     return(returns)
 
-# ------------------------------------------------------------------------------------------------------------
 
 def complete_data(exchange = 0):
     """Please specify 'exchange = 1' to receive Axess-tickers. Function returns OSE tickers by default.
