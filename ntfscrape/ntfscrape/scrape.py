@@ -332,19 +332,15 @@ def complete_data(exchange = 0):
     """Please specify 'exchange = 1' to receive Axess-tickers. Function returns OSE tickers by default.
     The complete data-function returns tickers, market caps, daily return data, price data, and complete names of companies.
     Beware that the collection of said data may take a few minutes."""
-    if exchange == 0:
-        e = exchange
-    if exchange == 1:
-        e = exchange
-    else:
-        print("Valid values for exchange includes 0 for OSE and 1 for Axess.")
+    if exchange != 0 and exchange != 1:
+        print("Error: Valid exchange choices include 0 for OSE and 1 for Axess.")
         exit
     print("\n This may take several minutes.")
-    tickers = get_tickers(exchange = e)
-    mcaps = mcap(tickers, exchange = e)
-    returns = daily_returns(tickers, exchange = e)
-    prices = price(tickers, exchange = e)
-    names = get_company_names(exchange = e)
+    tickers = get_tickers(exchange = exchange)
+    mcaps = mcap(tickers, exchange = exchange)
+    returns = daily_returns(tickers, exchange = exchange)
+    prices = price(tickers, exchange = exchange)
+    names = get_company_names(exchange = exchange)
     return([tickers, names, prices, returns, mcaps])
 
 
