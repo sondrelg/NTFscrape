@@ -344,3 +344,4 @@ def complete_data(exchange = 0):
     return([tickers, names, prices, returns, mcaps])
 
 
+
